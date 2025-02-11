@@ -1,3 +1,44 @@
-export class SkiResort{
-  
+import { MeasurementPoint } from './measuring-points';
+
+export class SkiResort {
+  constructor(
+    public id: string,
+    public rid: string,
+    public skiregion: string,
+    public areaname: string,
+    public lastUpdate: string,
+    public lang: string,
+    public skiAreaSlopeKm: number,
+    public skiMapUrl: string,
+    public measuringpoints: MeasurementPoint[],
+    public webcamUrl: string[],
+    public totalskilift: number,
+    public openskilift: number,
+    public totalskiliftkm: number,
+    public openskiliftkm: number,
+    public totalskislopes: number,
+    public openskislopes: number,
+    public totalskislopeskm: number,
+    public openskislopeskm: number,
+    public totaltracks: number,
+    public opentracks: number,
+    public totaltrackskm: number,
+    public opentrackskm: number,
+    public totalslides: number,
+    public opentslides: number,
+    public totalslideskm: number,
+    public opentslideskm: number,
+    public totaliceskating: number | null,
+    public openiceskating: number | null,
+    public contactadress: string,
+    public contacttel: string,
+    public contactcap: string,
+    public contactcity: string,
+    public contactfax: string | null,
+    public contactweburl: string,
+    public contactmail: string,
+    public contactlogo: string,
+    public contactgpsnorth: number,
+    public contactgpseast: number
+  ) {}
 }
