@@ -26,7 +26,7 @@ export class SkiResortService {
             item.lang,
             Number(item.SkiAreaSlopeKm),
             item.SkiMapUrl,
-            item.Measuringpoints.map((mp) =>
+            item.Measuringpoints.map((mp: { Id: string; LastUpdate: string; Shortname: string; SnowHeight: any; newSnowHeight: any; Temperature: string; LastSnowDate: string; Source: string; }) =>
               new MeasurementPoint(
                 mp.Id,
                 mp.LastUpdate,
