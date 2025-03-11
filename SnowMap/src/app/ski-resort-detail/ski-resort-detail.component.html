@@ -1,0 +1,24 @@
+<div *ngIf="skiResort">
+  <h2>{{ skiResort.areaname }}</h2>
+  <p><strong>Region:</strong> {{ skiResort.skiregion }}</p>
+  <p><strong>Last Update:</strong> {{ skiResort.lastUpdate }}</p>
+  <p><strong>Ski Area Slope Km:</strong> {{ skiResort.skiAreaSlopeKm }}</p>
+  <p><strong>Total Ski Lifts:</strong> {{ skiResort.totalskilift }}</p>
+  <p><strong>Open Ski Lifts:</strong> {{ skiResort.openskilift }}</p>
+  <p><strong>Total Ski Slopes:</strong> {{ skiResort.totalskislopes }}</p>
+  <p><strong>Open Ski Slopes:</strong> {{ skiResort.openskislopes }}</p>
+  <p><strong>Contact Address:</strong> {{ skiResort.contactadress }}</p>
+  <p><strong>Contact Tel:</strong> {{ skiResort.contacttel }}</p>
+  <p><strong>Contact Email:</strong> {{ skiResort.contactmail }}</p>
+
+  <h3>Map</h3>
+  <iframe [src]="skiResort.skiMapUrl" width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+  <h3>Webcams</h3>
+  <div *ngFor="let webcamUrl of skiResort.webcamUrl">
+    <img [src]="webcamUrl" alt="Webcam" style="width: 100%; height: auto;">
+  </div>
+</div>
+<div *ngIf="!skiResort">
+  <p>Loading ski resort details...</p>
+</div>

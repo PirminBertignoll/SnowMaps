@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SkiResort} from '../shared/ski-resort';
+import { SkiResort } from '../shared/ski-resort';
 import { MeasurementPoint } from '../shared/measuring-points';
 
 @Injectable({
@@ -10,6 +10,7 @@ import { MeasurementPoint } from '../shared/measuring-points';
 })
 export class SkiResortService {
   private apiUrl = 'https://tourism.api.opendatahub.com/v1/Weather/SnowReport';
+  private skiResorts: SkiResort[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -69,7 +70,16 @@ export class SkiResortService {
             Number(item.contactgpseast)
           )
         )
-      )
+      ),
+      map((skiResorts) => {
+        this.skiResorts = skiResorts;
+        return skiResorts;
+      })
     );
+  }
+
+  getSkiResortById(id: string): Observable<SkiResort | undefined> {
+    const resort = this.skiResorts.find((resort) => resort.id === id);
+    return of(resort);
   }
 }
