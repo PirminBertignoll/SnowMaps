@@ -1,5 +1,9 @@
 <div *ngFor="let skiResort of skiResorts">
   <hr>
-  <h2 >{{skiResort.areaname}}</h2>
-  Km. {{skiResort.openskislopes}}
+  <h2>
+    <a [routerLink]="['/ski-resort-detail', skiResort.id]" style="cursor: pointer; text-decoration: none;">
+      {{ skiResort.areaname }}
+    </a>
+  </h2>
+  Km. {{ skiResort.openskislopes }}
 </div>

@@ -18,6 +18,11 @@ export class TestComponentComponent implements OnInit {
       this.skiResorts = resorts;
     });
   }
+  selectedSkiResort: SkiResort | null = null;
+
+  selectSkiResort(skiResort: SkiResort) {
+    this.selectedSkiResort = skiResort;
+  }
 
 
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SkiResort } from '../shared/ski-resort';
 import { SkiResortService } from '../services/snow-service';
+
 
 @Component({
   selector: 'sm-ski-resort-detail',
@@ -9,7 +10,8 @@ import { SkiResortService } from '../services/snow-service';
   styleUrls: ['./ski-resort-detail.component.scss']
 })
 export class SkiResortDetailComponent implements OnInit {
-  skiResort: SkiResort | undefined;
+  skiResort!: SkiResort | undefined;
+  
 
   constructor(
     private route: ActivatedRoute,
